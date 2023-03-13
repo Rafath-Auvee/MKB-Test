@@ -52,7 +52,6 @@ const AuthProvider = ({ children }) => {
 
   React.useEffect(() => {
     const token = localStorage.getItem("token");
-    const user_role = localStorage.getItem("role");
     if (token) {
       sdk
         .check(token)

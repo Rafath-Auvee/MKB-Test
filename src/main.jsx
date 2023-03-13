@@ -31,6 +31,16 @@ function renderRoutes(role) {
 
 function Main() {
   const { state } = React.useContext(AuthContext);
+  const [showSnackbar, setShowSnackbar] = React.useState(false);
+
+  React.useEffect(() => {
+    if (state.isAuthenticated) {
+      setShowSnackbar(true);
+      setTimeout(() => {
+        setShowSnackbar(false);
+      }, 3000);
+    }
+  }, [state.isAuthenticated]);
 
   return (
     <div className="h-full">
@@ -43,7 +53,15 @@ function Main() {
           </div>
         </div>
       </div>
-      <SnackBar />
+      {showSnackbar && (
+        <div
+          id="mkd-toast"
+          className="absolute top-5 right-5 flex items-center w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400"
+          role="alert"
+        >
+          <div className="text-sm font-normal">Logged in successfully!</div>
+        </div>
+      )}
     </div>
   );
 }
