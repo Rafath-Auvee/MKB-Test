@@ -25,6 +25,7 @@ const reducer = (state, action) => {
         role: action.payload.role,
       };
     case "LOGOUT":
+      console.log("Logout");
       localStorage.clear();
       return {
         ...state,
@@ -32,6 +33,7 @@ const reducer = (state, action) => {
         user: null,
         role: null,
       };
+      
     default:
       console.log("Actions:", action);
       return state;

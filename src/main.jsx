@@ -46,14 +46,14 @@ function Main() {
     <div className="h-full w-full h-full bg-transparent text-white font-sans">
       <div className="flex w-full">
         <div className="w-full">
-          <div className="page-wrapper w-full py-10 px-5">
+          <div className="">
             {!state.isAuthenticated
               ? renderRoutes("none")
               : renderRoutes(state.role)}
           </div>
         </div>
       </div>
-      {showSnackbar && (
+      {/* {showSnackbar && (
         <div
           id="mkd-toast"
           className="absolute top-5 right-5 flex items-center w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400"
@@ -61,7 +61,7 @@ function Main() {
         >
           <div className="text-sm font-normal">Logged in successfully!</div>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
