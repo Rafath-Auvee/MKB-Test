@@ -43,7 +43,7 @@ function Main() {
   }, [state.isAuthenticated]);
 
   return (
-    <div className="h-full">
+    <div className="h-full w-full h-full bg-transparent text-white font-sans">
       <div className="flex w-full">
         <div className="w-full">
           <div className="page-wrapper w-full py-10 px-5">
